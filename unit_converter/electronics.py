@@ -28,19 +28,24 @@ A CircuitPython module for electronics converters and calculators.
 """
 
 # Ohms' Law calculator/converter
-def ohms_law(ohms, milliamperes, volts):
+def ohms_law(ohms=None, milliamperes=None, volts=None):
+    """When only two numeric values are supplied (or two numeric values and
+    a third =None value), the two numeric values are used to calculate and
+    return the missing (or =None) value. """
+
+    if (ohms, milliamperes, volts).count(None) > 1:
+        raise ValueError("At least two values must be provided.")
 
     # Calculate resistance in Ohms
-    if (None in (volts, milliamperes)):
-        raise ValueError("Volts and current values required.")
-    return volts / (millamperes * 1000)
+    if ohms == None:
+        return volts / (milliamperes / 1000.0)
 
     # Calculate current in milliamperes (mA)
-    if (None in (volts, ohms)):
-        raise ValueError("Resistance and voltage values required.")
-    return volts / ohms
+    if milliamperes == None:
+        return (volts / ohms) * 1000.0
 
     # Calculate voltage in volts
-    if None in (ohms, milliamperes):
-        raise ValueError("Resistance and current values required.")
-    return ohms * (milliamperes * 1000)
+    if volts == None:
+        return ohms * (milliamperes / 1000.0)
+
+    raise ValueError("Too many values. Only two are needed.")
