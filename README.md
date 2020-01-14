@@ -39,21 +39,27 @@ else:
     flag_text = "xST"
 
 # Print the submitted time    
-print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(flag_text,
+print("     {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(
       datetime.tm_mon, datetime.tm_mday, datetime.tm_year,
       datetime.tm_hour, datetime.tm_min, datetime.tm_sec,
       datetime.tm_wday))
 
 # Print the adjusted time
-print("adj  {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(
+print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(flag_text,
       adj_datetime.tm_mon, adj_datetime.tm_mday, adj_datetime.tm_year,
       adj_datetime.tm_hour, adj_datetime.tm_min, adj_datetime.tm_sec,
       adj_datetime.tm_wday))
+
 ```
 ```python
-code.py output:
-DST: 11/1/2020 00:00:00  week_day=6
-adj  11/1/2020 01:00:00  week_day=6
+code.py output:  (for 11/1/2020 00:00 xST input)
+     11/1/2020 00:00:00  week_day=6 (Sunday)
+DST: 11/1/2020 01:00:00  week_day=6
+```
+```python
+code.py output:  (for 11/1/2020 01:00 xST input (02:00 DST))
+     11/1/2020 01:00:00  week_day=6 (Sunday)
+xST: 11/1/2020 01:00:00  week_day=6
 ```
 ### Coordinates
 ### Electronics
