@@ -20,46 +20,27 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`electronics`
+`electronics` - Electronics Converters and Calculators
 ================================================================================
-electronics 2020-01-13 v0.0 04:30PM
-A CircuitPython collection of electronics helpers for calculating:
-    Ohm's Law
-
-Part of the CedarGrove Unit_Converter library.
+A CircuitPython module for electronics converters and calculators.
 
 * Author(s): Cedar Grove Studios
-
-Implementation Notes
---------------------
-**Hardware:**
-
-**Software and Dependencies:**
-
-* Adafruit CircuitPython firmware for the supported boards:
-  https://github.com/adafruit/circuitpython/releases
-
 """
 
-__version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/CedarGroveStudios/Converters.git"
-
 # Ohms' Law calculator/converter
-def ohms_law(ohms=None, milliamperes=None, volts=None):
-    if (None in (ohms, millamperes, volts)):
-        raise RuntimeError("Invalid value")
+def ohms_law(ohms, milliamperes, volts):
 
     # Calculate resistance in Ohms
-    if (None in (volts, milliamperes)) or (milliamperes == 0):
-        raise RuntimeError("Invalid value")
+    if (None in (volts, milliamperes)):
+        raise ValueError("Volts and current values required.")
     return volts / (millamperes * 1000)
 
     # Calculate current in milliamperes (mA)
-    if (None in (volts, ohms)) or (ohms == 0):
-        raise RuntimeError("Invalid value")
+    if (None in (volts, ohms)):
+        raise ValueError("Resistance and voltage values required.")
     return volts / ohms
 
     # Calculate voltage in volts
     if None in (ohms, milliamperes):
-        raise RuntimeError("Invalid value")
+        raise ValueError("Resistance and current values required.")
     return ohms * (milliamperes * 1000)

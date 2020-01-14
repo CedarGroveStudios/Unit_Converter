@@ -20,9 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`temperature` - Temperature Converter
+`temperature` - Temperature Converters
 ================================================================================
-
 A CircuitPython module for temperature conversion.
 
 * Author(s): Cedar Grove Studios
@@ -43,4 +42,3 @@ def celsius_to_kelvin(deg_c):
 # Kelvin to Celsius converter
 def kelvin_to_celsius(kelvins):
     return (kelvins - 273.15)
-    

@@ -20,10 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`chronos`
+`chronos` - Time Converters
 ================================================================================
-chronos 2020-01-10 v0.0 10:30PM
-A CircuitPython collection of time classes for calculating:
+A CircuitPython module for time conversion.
+
     LeapYear: The number of monthdays in February.
 
     ConvertDST: North American Daylight Saving Time from Standard Time using
@@ -31,23 +31,8 @@ A CircuitPython collection of time classes for calculating:
     Standard Time (xST). The value is analyzed and converted to
     Daylight Saving Time (DST) if appropriate.
 
-Part of the CedarGrove Converters library.
-
 * Author(s): Cedar Grove Studios
-
-Implementation Notes
---------------------
-**Hardware:**
-
-**Software and Dependencies:**
-
-* Adafruit CircuitPython firmware for the supported boards:
-  https://github.com/adafruit/circuitpython/releases
-
 """
-
-__version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/CedarGroveStudios/Converters.git"
 
 import time
 
@@ -136,82 +121,39 @@ class LeapYear:
             print("*Init:", self.__class__)
             print("*Init: ", self.__dict__)
 
-class ConvertDST:
-    """Daylight Saving Time (DST) helper class."""
+def detect_dst(datetime):
+    """Detects North American Daylight Saving Time from Standard Time.
+    Input to this helper is expressed as a structured time object in
+    Standard Time (xST). The helper cannot detect DST for a DST
+    structured time object.
+        Returns:    True if datetime is North American DST
+                    False if datetime is xST """
 
-    def __init__(self, debug=False):
-        # default date (2000-Jan-1) and is_DST flag values
-        self._datetime = time.struct_time((2000,1,1,0,0,0,5,1,-1))
-        self._is_dst = False
+    # Fix weekday and yearday structured time errors
+    datetime = time.localtime(time.mktime(datetime))
 
-        # debug parameters
-        self._debug = debug
-        if self._debug:
-            print("*Init: ", self.__class__)
-            print("*Init: ", self.__dict__)
+    # Convert Python time structure Monday-origin to Sunday-origin.
+    weekday = (datetime.tm_wday + 1) % 7
 
-    @property
-    def date_time(self):
-        """The converter's structured time value. Default is None."""
-        return self._datetime
+    # Get the date of the previous Sunday or today's date if Sunday.
+    prev_sunday_date = datetime.tm_mday - weekday
 
-    @date_time.setter
-    def date_time(self, datetime=None):
-        if datetime == None:  # Check for empty datetime input
-            raise RuntimeError("Invalid datetime value")
-        # Fix structure errors, check if DST, and adjust if needed
-        datetime = time.localtime(time.mktime(datetime))
-        self._is_dst = self.detect_dst(datetime)
-        self._datetime = self.adjust_dst(datetime, self._is_dst)
+    # March: Second Sunday occurs on the 8th through 14th of the month.
+    if datetime.tm_mon == 3:
+        if prev_sunday_date <= 7:   # First Sunday of month or before
+            return False      # xST
+        if prev_sunday_date <= 14:  # Second Sunday of month
+            # determine current DST threshold
+            dst_thresh = time.mktime(time.struct_time((datetime.tm_year,
+                                                       3, prev_sunday_date,
+                                                       1, 0, 0, 0, -1, -1)))
+            print(time.mktime(datetime), dst_thresh)
+            if time.mktime(datetime) < dst_thresh:
+                return False # xST
+            return True      # DST
 
-    @property
-    def is_dst(self):
-        """The converter's is DST flag value. Default is False."""
-        return self._is_dst
-
-    @property
-    def debug(self):
-        """The class debugging mode. Default is False."""
-        return self._debug
-
-    @debug.setter
-    def debug(self, debug=False):
-        self._debug = debug
-        if self._debug:
-            print("*Init: ", self.__class__)
-            print("*Init: ", self.__dict__)
-
-    def detect_dst(self, datetime):
-        # Returns logical flag True if datetime is North American DST;
-        #   false if standard time (xST)
-
-        # Preliminary filtering for April to October
-        if datetime.tm_mon < 3 or datetime.tm_mon > 11:  # Dec - Feb: Standard
-            return False  # xST
-        if datetime.tm_mon > 3 and datetime.tm_mon < 11:  # Apr - Oct: DST
-            return True   # DST
-
-        # Convert Python time structure Monday-origin to Sunday-origin.
-        weekday = (datetime.tm_wday + 1) % 7
-
-        # Get the date of the previous Sunday or today's date if Sunday.
-        prev_sunday_date = datetime.tm_mday - weekday
-
-        # March: Second Sunday occurs on the 8th through 14th of the month.
-        if datetime.tm_mon == 3:
-            if prev_sunday_date <= 7:   # First Sunday of month or before
-                return False      # xST
-            if prev_sunday_date <= 14:  # Second Sunday of month
-                # determine current DST threshold
-                dst_thresh = time.mktime(time.struct_time((datetime.tm_year,
-                                                           3, prev_sunday_date,
-                                                           1, 0, 0, 0, -1, -1)))
-                print(time.mktime(datetime), dst_thresh)
-                if time.mktime(datetime) < dst_thresh:
-                    return False # xST
-                return True      # DST
-
-        # November: First Sunday occurs on the 1st through 7th of the month.
+    # November: First Sunday occurs on the 1st through 7th of the month.
+    if datetime.tm_mon == 11:
         if prev_sunday_date < 1:   # Before first Sunday of month
             return True      # DST
         if prev_sunday_date <= 7:  # First Sunday of month
@@ -222,11 +164,25 @@ class ConvertDST:
             if time.mktime(datetime) < xst_thresh:
                 return True  # DST
             return False     # xST
-        raise RuntimeError("Invalid datetime value")  # should never get here
-        return  # Error
 
-    def adjust_dst(self, datetime, is_dst):
-        if is_dst:  # Add an hour
-            dst_date_time = time.mktime(datetime) + 3600
-            return time.localtime(dst_date_time)
-        return datetime
+    # Check for Standard Time
+    if datetime.tm_mon < 3 or datetime.tm_mon > 11:  # Dec - Feb: xST
+        return False  # xST
+    return True       # DST
+    #if datetime.tm_mon > 3 and datetime.tm_mon < 11:  # Apr - Oct: DST
+    #    return True   # DST
+
+def adjust_dst(datetime):
+    """Converts Standard Time to North American Daylight Saving Time.
+    Input to this helper is a structured time object in Standard Time (xST).
+    The helper returns a structured time object adjusted to a DST value if
+    appropriate. Input to this helper is expressed as a structured time object
+    in Standard Time (xST). The helper cannot detect DST for a DST
+    structured time object. """
+
+    is_dst = detect_dst(datetime)  # Determine if datetime is DST
+
+    if is_dst:  # If DST, add an hour
+        dst_date_time = time.mktime(datetime) + 3600
+        return time.localtime(dst_date_time)
+    return datetime
