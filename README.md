@@ -29,6 +29,7 @@ True
 import time
 from unit_converter.chronos import adjust_dst
 
+# Today's date: 11/01/2020 00:00 Standard Time (xST)
 datetime = time.struct_time((2020,11,1,0,0,0,6,0,-1))
 
 # Check datetime and adjust if DST
