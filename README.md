@@ -7,7 +7,7 @@
 ### Area
 ### Chronos (Time)
 >##### Leap Year Determination
-> leap_year(year)
+>> leap_year(year)
 ```python
 >>> from unit_converter.chronos import leap_year
 >>> leap_year(2000)
@@ -25,7 +25,7 @@ True
 >>>
 ```
 >##### Structured Time to DST Converter
-> adj_datetime(datetime)
+>> adjust_dst(datetime)
 ```python
 # Example code
 import time
@@ -71,7 +71,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Coordinates
 ### Electronics
 >##### Ohm's Law Calculator
-> ohms_law(ohms, milliamperes, volts)
+>> ohms_law(ohms, milliamperes, volts)
 ```python
 >>> from unit_converter.electronics import ohms_law
 >>> 
@@ -86,7 +86,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Speed/Velocity
 ### Temperature
 >##### Celsius to Fahrenheit Converter
-> celsius_to_fahrenheit(deg_c)
+>> celsius_to_fahrenheit(deg_c)
 ```python
 >>> from unit_converter.temperature import celsius_to_fahrenheit
 >>> celsius_to_fahrenheit(100)
@@ -96,7 +96,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>>
 ```
 >##### Fahrenheit to Celsius Converter
-> fahrenheit_to_celsius(deg_f)
+>> fahrenheit_to_celsius(deg_f)
 ```python
 >>> from unit_converter.temperature import fahrenheit_to_celsius
 >>> fahrenheit_to_celsius(32)
@@ -106,7 +106,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>>
 ```
 >##### Celsius to Kelvin Converter
-> celsius_to_kelvin(deg_c)
+>> celsius_to_kelvin(deg_c)
 
 ```python
 >>> from unit_converter.temperature import celsius_to_kelvin
@@ -115,7 +115,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>>
 ```
 >##### Kelvin to Celsius Converter
-> kelvin_to_celsius(kelvins)
+>> kelvin_to_celsius(kelvins)
 ```python
 >>> from unit_converter.temperature import kelvin_to_celsius
 >>> kelvin_to_celsius(273.15)
