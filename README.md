@@ -25,6 +25,7 @@ True
 ```
 >##### Structured Time to DST Converter
 ```python
+# Example code
 import time
 from unit_converter.chronos import adjust_dst
 
@@ -52,13 +53,16 @@ print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(flag_text,
 
 ```
 ```python
-code.py output:  (for 11/1/2020 00:00 xST input)
-     11/1/2020 00:00:00  week_day=6 (Sunday)
+# for 11/1/2020 00:00 xST input; first Sunday of November 01:00 DST
+code.py output:
+     11/1/2020 00:00:00  week_day=6
 DST: 11/1/2020 01:00:00  week_day=6
 ```
 ```python
-code.py output:  (for 11/1/2020 01:00 xST input (02:00 DST))
-     11/1/2020 01:00:00  week_day=6 (Sunday)
+# for 11/1/2020 01:00 xST input; first Sunday of November 02:00 DST
+# falls back to 01:00 xST
+code.py output:
+     11/1/2020 01:00:00  week_day=6
 xST: 11/1/2020 01:00:00  week_day=6
 ```
 ### Coordinates
