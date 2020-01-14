@@ -26,31 +26,34 @@ True
 >##### Structured Time to DST Converter
 ```python
 import time
-from unit_converter.chronos import adjust_dst, detect_dst
+from unit_converter.chronos import adjust_dst
 
 datetime = time.struct_time((2020,11,1,0,0,0,6,0,-1))
 
-if detect_dst(datetime):
-    time_text = "DST"
+# Check datetime and adjust if DST
+adj_datetime, is_dst = adjust_dst(datetime)
+
+if is_dst:
+    flag_text = "DST"
 else:
-    time_text = "Standard"
-    
-print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day {}".format(time_text,
+    flag_text = "xST"
+
+# Print the submitted time    
+print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(flag_text,
       datetime.tm_mon, datetime.tm_mday, datetime.tm_year,
       datetime.tm_hour, datetime.tm_min, datetime.tm_sec,
       datetime.tm_wday))
 
-adj_datetime = adjust_dst(datetime)
-
-print("     {}/{}/{} {:02}:{:02}:{:02}  week_day {}".format(
+# Print the adjusted time
+print("adj  {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(
       adj_datetime.tm_mon, adj_datetime.tm_mday, adj_datetime.tm_year,
       adj_datetime.tm_hour, adj_datetime.tm_min, adj_datetime.tm_sec,
       adj_datetime.tm_wday))
 ```
 ```python
 code.py output:
-DST: 11/1/2020 00:00:00  week_day 6
-     11/1/2020 01:00:00  week_day 6
+DST: 11/1/2020 00:00:00  week_day=6
+adj  11/1/2020 01:00:00  week_day=6
 ```
 ### Coordinates
 ### Electronics
