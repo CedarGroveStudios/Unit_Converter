@@ -3,6 +3,70 @@
  
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
 
+### Angle
+### Area
+### Chronos (Time)
+>##### Leap Year Determination
+```python
+>>> from unit_converter.chronos import leap_year
+>>> leap_year(2000)
+True
+>>> leap_year(2020)
+True
+>>> leap_year(2021)
+False
+>>> leap_year(2024)
+True
+>>> leap_year(2100)
+False
+>>> leap_year(2104)
+True
+>>>
+```
+>##### Structured Time to DST Converter
+```python
+import time
+from unit_converter.chronos import adjust_dst, detect_dst
+
+datetime = time.struct_time((2020,11,1,0,0,0,6,0,-1))
+
+if detect_dst(datetime):
+    time_text = "DST"
+else:
+    time_text = "Standard"
+    
+print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day {}".format(time_text,
+      datetime.tm_mon, datetime.tm_mday, datetime.tm_year,
+      datetime.tm_hour, datetime.tm_min, datetime.tm_sec,
+      datetime.tm_wday))
+
+adj_datetime = adjust_dst(datetime)
+
+print("     {}/{}/{} {:02}:{:02}:{:02}  week_day {}".format(
+      adj_datetime.tm_mon, adj_datetime.tm_mday, adj_datetime.tm_year,
+      adj_datetime.tm_hour, adj_datetime.tm_min, adj_datetime.tm_sec,
+      adj_datetime.tm_wday))
+```
+```python
+code.py output:
+DST: 11/1/2020 00:00:00  week_day 6
+     11/1/2020 01:00:00  week_day 6
+```
+### Coordinates
+### Electronics
+>##### Ohm's Law Calculator
+```python
+>>> from unit_converter.electronics import ohms_law
+>>> 
+```
+### Energy
+### Frequency
+### Length
+### Mass/Weight
+### Music
+### Power
+### Pressure
+### Speed/Velocity
 ### Temperature
 >##### Celsius to Fahrenheit Converter
 ```python
@@ -36,33 +100,5 @@
 0.0
 >>>
 ```
-### Angle
-### Area
-### Chronos (Time)
->##### Leap Year Determination
-```python
->>> from unit_converter.chronos import leap_year
->>> 
-```
->##### Structured Time to DST Converter
-```python
->>> from unit_converter.chronos import convert_dst
->>> 
-```
-### Coordinates
-### Electronics
->##### Ohm's Law Calculator
-```python
->>> from unit_converter.electronics import ohms_law
->>> 
-```
-### Energy
-### Frequency
-### Length
-### Mass/Weight
-### Music
-### Power
-### Pressure
-### Speed/Velocity
 ### Volume
 
