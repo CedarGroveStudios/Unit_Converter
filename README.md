@@ -1,7 +1,7 @@
 # Unit Converter
  A Cornucopia of CircuitPython Unit Converters
  
- ![Image of Module](https://github.com/CedarGroveStudios/Converters/blob/master/photos%20and%20graphics/social_wide.png)
+ ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
 
 ### Temperature
 >##### Celsius to Fahrenheit Converter
