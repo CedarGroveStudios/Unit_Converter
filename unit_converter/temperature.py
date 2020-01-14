@@ -20,36 +20,27 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`temperature`
+`temperature` - Temperature Converter
 ================================================================================
-temperature 2020-01-13 v0.0 04:30PM
-A CircuitPython class for converting temperature measurement units between
-degrees Fahrenheit and degrees Celsius.
+
+A CircuitPython module for temperature conversion.
 
 * Author(s): Cedar Grove Studios
-
-Implementation Notes
---------------------
-**Hardware:**
-
-**Software and Dependencies:**
-
-* Adafruit CircuitPython firmware for the supported boards:
-  https://github.com/adafruit/circuitpython/releases
-
 """
 
-__version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/CedarGroveStudios/unit_converter.git"
-
 # Celsius to Fahrenheit converter
-def celsius_to_fahrenheit(deg_c=None):
-    if deg_c == None:
-        raise RuntimeError("Invalid value")
+def celsius_to_fahrenheit(deg_c):
     return (((9 / 5) * deg_c) + 32)
 
 # Fahrenheit to Celsius converter
-def fahrenheit_to_celsius(deg_f=None):
-    if deg_f == None:
-        raise RuntimeError("Invalid value")
+def fahrenheit_to_celsius(deg_f):
     return ((deg_f - 32) * (5 / 9))
+
+# Celsius to Kelvin converter
+def celsius_to_kelvin(deg_c):
+    return (deg_c + 273.15)
+
+# Kelvin to Celsius converter
+def kelvin_to_celsius(kelvins):
+    return (kelvins - 273.15)
+    
