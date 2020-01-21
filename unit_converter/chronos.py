@@ -67,7 +67,6 @@ def detect_dst(datetime):
             dst_thresh = time.mktime(time.struct_time((datetime.tm_year,
                                                        3, prev_sunday_date,
                                                        1, 0, 0, 0, -1, -1)))
-            print(time.mktime(datetime), dst_thresh)
             if time.mktime(datetime) < dst_thresh:
                 return False # xST
             return True      # DST
