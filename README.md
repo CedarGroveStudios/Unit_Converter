@@ -1,5 +1,5 @@
 # Unit Converter
- A Cornucopia of CircuitPython Unit Converters
+ An in-development Cornucopia of CircuitPython Unit Converters
  
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
 
