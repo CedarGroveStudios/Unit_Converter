@@ -74,6 +74,12 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>###### ohms_law(ohms, milliamperes, volts)
 ```python
 >>> from unit_converter.electronics import ohms_law
+>>> ohms_law(ohms=1000, volts=3.3)
+3.3  # current in milliamperes
+>>> ohms_law(volts=5, milliamperes=100)
+50.0  # resistance in ohms
+>>> ohms_law(milliamperes=5, ohms=2000)
+10.0  # voltage in volts
 >>> 
 ```
 ### Energy
