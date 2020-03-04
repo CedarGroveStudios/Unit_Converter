@@ -58,25 +58,29 @@ def detect_dst(datetime):
     # Get the date of the previous Sunday or today's date if Sunday.
     prev_sunday_date = datetime.tm_mday - weekday
 
-    # March: Second Sunday occurs on the 8th through 14th of the month.
+    # March: Second Sunday occurs on the 8th through 14th of the month at
+    #   02:00 Standard Time (xST).
     if datetime.tm_mon == 3:
         if prev_sunday_date <= 7:   # First Sunday of month or before
             return False      # xST
         if prev_sunday_date <= 14:  # Second Sunday of month
             # determine current DST threshold
+            # year, March, previous Sunday date, 02 hours xST, 00 min, 00 sec
             dst_thresh = time.mktime(time.struct_time((datetime.tm_year,
                                                        3, prev_sunday_date,
-                                                       1, 0, 0, 0, -1, -1)))
+                                                       2, 0, 0, 0, -1, -1)))
             if time.mktime(datetime) < dst_thresh:
                 return False # xST
             return True      # DST
 
-    # November: First Sunday occurs on the 1st through 7th of the month.
+    # November: First Sunday occurs on the 1st through 7th of the month at
+    #    01:00 Standard Time (xST) = 02:00 Daylight Saving Time (xDT)
     if datetime.tm_mon == 11:
         if prev_sunday_date < 1:   # Before first Sunday of month
             return True      # DST
         if prev_sunday_date <= 7:  # First Sunday of month
             # determine current xST threshold
+            # year, March, previous Sunday date, 01 hours xDT, 00 min, 00 sec
             xst_thresh = time.mktime(time.struct_time((datetime.tm_year,
                                                        11, prev_sunday_date, 1,
                                                        0, 0, 0, -1, -1)))
