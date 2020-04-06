@@ -128,5 +128,29 @@ xST: 11/1/2020 01:00:00  week_day=6
 0.0
 >>>
 ```
+>##### Dew Point Converter
+>>###### dew_point(deg_c, humidity)
+```python
+>>> from unit_converter.temperature import dew_point
+>>> dew_point(tt, hh)
+dpdpdpdp
+>>>
+```
+>##### Heat Index Converter
+>>###### heat_index(deg_c, humidity)
+```python
+>>> from unit_converter.temperature import heat_index
+>>> heat_index(tt, hh)
+hihihihihi
+>>>
+```
+>##### Wind Chill Converter
+>>###### wind_chill(deg_c, wind_vel, humidity)
+```python
+>>> from unit_converter.temperature import wind_chill
+>>> wind_chill(tt, ww, hh)
+wcwcwcwcwc
+>>>
+```
 ### Volume
 
