@@ -44,30 +44,50 @@ def kelvin_to_celsius(kelvins):
     return (kelvins - 273.15)
 
 # Dew Point converter (degrees Celsius)
-def dew_point(deg_c, humidity):
-    return round((pow(humidity / 100.0, 0.125) * (112.0 + (0.9 * deg_c)) +
-            (0.1 * deg_c) - 112.0), 2)
+def dew_point(deg_c, humidity, verbose=False):
+    message_list = (
+                    (-99, 10, "Safe",   ": A bit dry for some."),
+                    (10, 12, "Safe",    ": Very comfortable."),
+                    (13, 16, "Safe",    ": Comfortable."),
+                    (16, 18, "Safe",    ": Okay for most."),
+                    (18, 21, "Caution", ": Somewhat uncomfortable for most people."),
+                    (21, 24, "Caution", ": Very humid, quite uncomfortable."),
+                    (24, 26, "Extreme Caution",
+                    ": Extremely uncomfortable, fairly oppresive."),
+                    (26, 99, "DANGER",
+                    ": Severely high, potentially deadly for asthma sufferers.")
+                    )
 
-# Heat/Comfort index (degrees Fahrenheit)
+    dew_point_c = round((pow(humidity / 100.0, 0.125) *
+                        (112.0 + (0.9 * deg_c)) + (0.1 * deg_c) - 112.0), 2)
+
+    for _ in range(0, 8):  # Select range message from list
+        if message_list[_][0] <= dew_point_c < message_list[_][1]:
+            if verbose:
+                return dew_point_c, message_list[_][2] + message_list[_][3]
+            else:
+                return dew_point_c
+
+# Heat/Comfort index (degrees Celsius)
 def heat_index(deg_c, humidity, verbose=False):
     # (source: https://en.wikipedia.org/wiki/Heat_index)
     message_list = (
-                    (-99, 26, "Safe: ", "Heat index is not a factor.", ""),
-                    (26, 32, "Caution: ",
-                    "Fatigue is possible with prolonged exposure and activity. ",
+                    (-99, 26, "Safe", ": Heat index is not a factor.", ""),
+                    (26, 32, "Caution",
+                    ": Fatigue is possible with prolonged exposure and activity. ",
                     "Continuing activity could result in heat cramps."),
-                    (32, 41, "Extreme Caution: ",
-                    "Heat cramps and heat exhaustion are possible. ",
+                    (32, 41, "Extreme Caution",
+                    ": Heat cramps and heat exhaustion are possible. ",
                     "Continuing activity could result in heat stroke."),
-                    (41, 54, "DANGER: ",
-                    "Heat cramps and heat exhaustion are likely. ",
+                    (41, 54, "DANGER",
+                    ": Heat cramps and heat exhaustion are likely. ",
                     "Heat stroke is probable with continued activity."),
-                    (54, 99, "EXTREME DANGER: ",
-                    "Heat stroke is imminent. ", "")
+                    (54, 99, "EXTREME DANGER",
+                    ": Heat stroke is imminent. ", "")
                     )
 
-    t = ((9 / 5) * deg_c) + 32  # dry-bulb temperature in degrees Fahrenheit
-    r = humidity                # percentage value between 0 and 100
+    t = ((9 / 5) * deg_c) + 32  # Dry-bulb temperature in degrees Fahrenheit
+    r = humidity                # Percentage value between 0 and 100
 
     # Fahrenheit coefficients
     c = (0, -42.379, 2.04901523, 10.14333127, -0.22475541, -0.00683783,
@@ -79,8 +99,7 @@ def heat_index(deg_c, humidity, verbose=False):
                      (c[8] * t * r**2) + (c[9] * t**2 * r**2), 1)
     h_index_c = round((h_index_f - 32)*(5/9), 1)   # convert to degrees Celsius
 
-    message = "Heat Index value is out of range."  # error condition flag
-    for _ in range(0, 5):
+    for _ in range(0, 5):  # Select range message from list
         if message_list[_][0] <= h_index_c < message_list[_][1]:
             if verbose:
                 return h_index_c, (message_list[_][2] + message_list[_][3] +
@@ -88,11 +107,11 @@ def heat_index(deg_c, humidity, verbose=False):
             else:
                 return h_index_c
 
-def wind_chill(deg_c, wind_vel_kmph):
+def wind_chill(deg_c, wind_vel_kmph, verbose=False):
     # (source: https://en.wikipedia.org/wiki/Wind_chill)
     pass
 
-def apparent_temperature(deg_c, humidity, wind_vel_kmph):
+def apparent_temperature(deg_c, humidity, wind_vel_kmph, verbose=False):
     # Australian apparent temperature (AT); thermal sensation
     # (source: https://en.wikipedia.org/wiki/Wind_chill)
     pass
