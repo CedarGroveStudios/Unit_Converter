@@ -74,18 +74,20 @@ def heat_index(deg_c, humidity, verbose=False):
          -0.05481717, 0.00122874, 0.00085282, -0.00000199)
 
     # Formula (Fahrenheit method: Schoen 2005)
-    h_index_f = (c[1] + (c[2] * t) + (c[3] * r) + (c[4] * t * r) +
-                (c[5] * t**2) + (c[6] * r**2) + (c[7] * t**2 * r) +
-                (c[8] * t * r**2) + (c[9] * t**2 * r**2))
-    h_index_c = (h_index_f - 32)*(5/9)  # convert to degrees Celsius
+    h_index_f = round(c[1] + (c[2] * t) + (c[3] * r) + (c[4] * t * r) +
+                     (c[5] * t**2) + (c[6] * r**2) + (c[7] * t**2 * r) +
+                     (c[8] * t * r**2) + (c[9] * t**2 * r**2), 1)
+    h_index_c = round((h_index_f - 32)*(5/9), 1)   # convert to degrees Celsius
 
     message = "Heat Index value is out of range."  # error condition flag
     for _ in range(0, 5):
         if message_list[_][0] <= h_index_c < message_list[_][1]:
             message = message_list[_][2]
             if verbose:
-                message = message + message_list[_][3] + message_list[_][4]
-    return h_index_c, message
+                return h_index_c, (message_list[_][2] + message_list[_][3] +
+                                   message_list[_][4])
+            else:
+                return h_index_c
 
 def wind_chill(deg_c, wind_vel_kmph):
     # (source: https://en.wikipedia.org/wiki/Wind_chill)
