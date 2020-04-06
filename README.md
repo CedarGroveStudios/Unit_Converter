@@ -137,11 +137,14 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>>
 ```
 >##### Heat Index Converter
->>###### heat_index(deg_c, humidity)
+>>###### heat_index(deg_c, humidity, verbose=False)
 ```python
 >>> from cedargrove_unit_converter.temperature import heat_index
->>> heat_index(27, 40)
-(26.8632, 'Caution: Fatigue is possible with prolonged exposure and activity. ')
+>>> heat_index(30, 50)
+(26.8632, 'Caution: ')
+>>> heat_index(30, 50, verbose=True)
+(31.0492, 'Caution: Fatigue is possible with prolonged exposure and activity. 
+           Continuing activity could result in heat cramps.')
 >>>
 ```
 >##### Wind Chill Converter (_under development_)
