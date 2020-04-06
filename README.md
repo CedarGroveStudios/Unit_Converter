@@ -90,6 +90,26 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Power
 ### Pressure
 ### Speed/Velocity
+>##### Meters-Per-Second to Feet-Per-Second Converter (_under development_)
+>>###### mps_to_fps(velocity_mps)
+```python
+>>> from cedargrove_unit_converter.velocity import mps_to_fps
+>>> mps_to_fps(22)
+xxxx
+>>>
+```
+>##### 
+Feet-Per-Second to Meters-Per-Second Converter (_under development_)
+>>###### fps_to_mps(velocity_fps)
+```python
+>>> from cedargrove_unit_converter.velocity import fps_to_mps
+>>> fps_to_mps(xxxx)
+22
+>>>
+```
+
+
+
 ### Temperature
 >##### Celsius to Fahrenheit Converter
 >>###### celsius_to_fahrenheit(deg_c)
