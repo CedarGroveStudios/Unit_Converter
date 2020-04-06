@@ -133,7 +133,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 ```python
 >>> from cedargrove_unit_converter.temperature import dew_point
 >>> dew_point(30, 50)
-18.4635
+18.46
 >>>
 ```
 >##### Heat Index Converter
