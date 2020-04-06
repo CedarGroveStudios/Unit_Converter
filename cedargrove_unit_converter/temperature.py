@@ -49,20 +49,23 @@ def dew_point(deg_c, humidity):
             (0.1 * deg_c) - 112.0)
 
 # Heat/Comfort index (degrees Fahrenheit)
-def heat_index(deg_c, humidity):
-    """ (source: https://en.wikipedia.org/wiki/Heat_index)
-    26–32 °C	80–90 °F
-        Caution: fatigue is possible with prolonged exposure and activity.
-        Continuing activity could result in heat cramps.
-    32–41 °C	90–105 °F
-    	Extreme caution: heat cramps and heat exhaustion are possible.
-        Continuing activity could result in heat stroke.
-    41–54 °C	105–130 °F
-    	Danger: heat cramps and heat exhaustion are likely; heat stroke is
-        probable with continued activity.
-    over 54 °C	over 130 °F
-    	Extreme danger: heat stroke is imminent.
-    """
+def heat_index(deg_c, humidity, verbose=False):
+    # (source: https://en.wikipedia.org/wiki/Heat_index)
+    message_list = (
+                    (-99, 26, "Safe: ", "Heat index is not a factor.", ""),
+                    (26, 32, "Caution: ",
+                    "Fatigue is possible with prolonged exposure and activity. ",
+                    "Continuing activity could result in heat cramps."),
+                    (32, 41, "Extreme Caution: ",
+                    "Heat cramps and heat exhaustion are possible. ",
+                    "Continuing activity could result in heat stroke."),
+                    (41, 54, "DANGER: ",
+                    "Heat cramps and heat exhaustion are likely. ",
+                    "Heat stroke is probable with continued activity."),
+                    (54, 99, "EXTREME DANGER: ",
+                    "Heat stroke is imminent. ", "")
+                    )
+
     t = ((9 / 5) * deg_c) + 32  # dry-bulb temperature in degrees Fahrenheit
     r = humidity                # percentage value between 0 and 100
 
@@ -71,9 +74,24 @@ def heat_index(deg_c, humidity):
          -0.05481717, 0.00122874, 0.00085282, -0.00000199)
 
     # Formula (Fahrenheit method: Schoen 2005)
-    h_index_f = c[1] + (c[2] * t) + (c[3] * r) + (c[4] * t * r) +
+    h_index_f = (c[1] + (c[2] * t) + (c[3] * r) + (c[4] * t * r) +
                 (c[5] * t**2) + (c[6] * r**2) + (c[7] * t**2 * r) +
-                (c[8] * t * r**2) + (c[9] * t**2 * r**2)
+                (c[8] * t * r**2) + (c[9] * t**2 * r**2))
     h_index_c = (h_index_f - 32)*(5/9)  # convert to degrees Celsius
 
-    return h_index_c
+    message = "Heat Index value is out of range."  # error condition flag
+    for _ in range(0, 5):
+        if message_list[_][0] <= h_index_c < message_list[_][1]:
+            message = message_list[_][2]
+            if verbose:
+                message = message + message_list[_][3] + message_list[_][4]
+    return h_index_c, message
+
+def wind_chill(deg_c, wind_vel_kmph):
+    # (source: https://en.wikipedia.org/wiki/Wind_chill)
+    pass
+
+def apparent_temperature(deg_c, humidity, wind_vel_kmph):
+    # Australian apparent temperature (AT); thermal sensation
+    # (source: https://en.wikipedia.org/wiki/Wind_chill)
+    pass
