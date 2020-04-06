@@ -141,7 +141,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 ```python
 >>> from cedargrove_unit_converter.temperature import heat_index
 >>> heat_index(27, 40)
-(26.8632, 'Caution: Fatigue is possible with prolonged exposure and activity. Continuing activity could result in heat cramps.')
+(26.8632, 'Caution: Fatigue is possible with prolonged exposure and activity. ')
 >>>
 ```
 >##### Wind Chill Converter (_under development_)
