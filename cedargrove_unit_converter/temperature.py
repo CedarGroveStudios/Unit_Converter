@@ -45,8 +45,8 @@ def kelvin_to_celsius(kelvins):
 
 # Dew Point converter (degrees Celsius)
 def dew_point(deg_c, humidity):
-    return (pow(humidity / 100.0, 0.125) * (112.0 + (0.9 * deg_c)) +
-            (0.1 * deg_c) - 112.0)
+    return round((pow(humidity / 100.0, 0.125) * (112.0 + (0.9 * deg_c)) +
+            (0.1 * deg_c) - 112.0), 2)
 
 # Heat/Comfort index (degrees Fahrenheit)
 def heat_index(deg_c, humidity, verbose=False):
@@ -82,7 +82,6 @@ def heat_index(deg_c, humidity, verbose=False):
     message = "Heat Index value is out of range."  # error condition flag
     for _ in range(0, 5):
         if message_list[_][0] <= h_index_c < message_list[_][1]:
-            message = message_list[_][2]
             if verbose:
                 return h_index_c, (message_list[_][2] + message_list[_][3] +
                                    message_list[_][4])
