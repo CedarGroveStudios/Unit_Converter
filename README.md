@@ -9,7 +9,7 @@
 >##### Leap Year Determination
 >>###### leap_year(year)
 ```python
->>> from unit_converter.chronos import leap_year
+>>> from cedargrove_unit_converter.chronos import leap_year
 >>> leap_year(2000)
 True
 >>> leap_year(2020)
@@ -29,7 +29,7 @@ True
 ```python
 # Example code
 import time
-from unit_converter.chronos import adjust_dst
+from cedargrove_unit_converter.chronos import adjust_dst
 
 # Today's date: 11/01/2020 00:00 Standard Time (xST)
 datetime = time.struct_time((2020,11,1,0,0,0,6,0,-1))
@@ -73,7 +73,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >##### Ohm's Law Calculator
 >>###### ohms_law(ohms, milliamperes, volts)
 ```python
->>> from unit_converter.electronics import ohms_law
+>>> from cedargrove_unit_converter.electronics import ohms_law
 >>> ohms_law(ohms=1000, volts=3.3)
 3.3  # current in milliamperes
 >>> ohms_law(volts=5, milliamperes=100)
@@ -94,7 +94,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >##### Celsius to Fahrenheit Converter
 >>###### celsius_to_fahrenheit(deg_c)
 ```python
->>> from unit_converter.temperature import celsius_to_fahrenheit
+>>> from cedargrove_unit_converter.temperature import celsius_to_fahrenheit
 >>> celsius_to_fahrenheit(100)
 212.0
 >>> celsius_to_fahrenheit(0)
@@ -104,7 +104,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >##### Fahrenheit to Celsius Converter
 >>###### fahrenheit_to_celsius(deg_f)
 ```python
->>> from unit_converter.temperature import fahrenheit_to_celsius
+>>> from cedargrove_unit_converter.temperature import fahrenheit_to_celsius
 >>> fahrenheit_to_celsius(32)
 0.0
 >>> fahrenheit_to_celsius(212)
@@ -115,7 +115,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>###### celsius_to_kelvin(deg_c)
 
 ```python
->>> from unit_converter.temperature import celsius_to_kelvin
+>>> from cedargrove_unit_converter.temperature import celsius_to_kelvin
 >>> celsius_to_kelvin(0)
 273.15
 >>>
@@ -123,7 +123,7 @@ xST: 11/1/2020 01:00:00  week_day=6
 >##### Kelvin to Celsius Converter
 >>###### kelvin_to_celsius(kelvins)
 ```python
->>> from unit_converter.temperature import kelvin_to_celsius
+>>> from cedargrove_unit_converter.temperature import kelvin_to_celsius
 >>> kelvin_to_celsius(273.15)
 0.0
 >>>
@@ -131,23 +131,23 @@ xST: 11/1/2020 01:00:00  week_day=6
 >##### Dew Point Converter
 >>###### dew_point(deg_c, humidity)
 ```python
->>> from unit_converter.temperature import dew_point
->>> dew_point(tt, hh)
-dpdpdpdp
+>>> from cedargrove_unit_converter.temperature import dew_point
+>>> dew_point(30, 50)
+18.4635
 >>>
 ```
 >##### Heat Index Converter
 >>###### heat_index(deg_c, humidity)
 ```python
->>> from unit_converter.temperature import heat_index
->>> heat_index(tt, hh)
-hihihihihi
+>>> from cedargrove_unit_converter.temperature import heat_index
+>>> heat_index(27, 40)
+26.8632
 >>>
 ```
 >##### Wind Chill Converter
 >>###### wind_chill(deg_c, wind_vel, humidity)
 ```python
->>> from unit_converter.temperature import wind_chill
+>>> from cedargrove_unit_converter.temperature import wind_chill
 >>> wind_chill(tt, ww, hh)
 wcwcwcwcwc
 >>>
