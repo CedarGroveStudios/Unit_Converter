@@ -148,11 +148,19 @@ xST: 11/1/2020 01:00:00  week_day=6
 >>>
 ```
 >##### Wind Chill Converter (_under development_)
->>###### wind_chill(deg_c, wind_vel, humidity)
+>>###### wind_chill(deg_c, wind_vel_kmph, verbose=False)
 ```python
 >>> from cedargrove_unit_converter.temperature import wind_chill
->>> wind_chill(tt, ww, hh)
+>>> wind_chill(tt, ww)
 wcwcwcwcwc
+>>>
+```
+>##### Apparent Temperature Converter (_under development_)
+>>###### apparent_temperature(deg_c, humidity, wind_vel_kmph, verbose=False)
+```python
+>>> from cedargrove_unit_converter.temperature import apparent_temperature
+>>> apparent_temperature(tt, hh, ww)
+atatatatat
 >>>
 ```
 ### Volume
