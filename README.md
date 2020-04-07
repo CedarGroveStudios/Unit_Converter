@@ -7,9 +7,8 @@
 ### Angle
 ### Area
 ### Chronos (Time)
->##### Leap Year Determination
->>###### leap_year(year)
 ```python
+>>> # Leap Year Determination
 >>> from cedargrove_unit_converter.chronos import leap_year
 >>> leap_year(2000)
 True
@@ -23,11 +22,8 @@ True
 False
 >>> leap_year(2104)
 True
->>>
-```
->##### Structured Time to DST Converter
->>###### adjust_dst(datetime)
-```python
+
+# Structured Time to DST Converter
 # Example code
 import time
 from cedargrove_unit_converter.chronos import adjust_dst
@@ -68,20 +64,19 @@ DST: 11/1/2020 01:00:00  week_day=6
 code.py output:
      11/1/2020 01:00:00  week_day=6
 xST: 11/1/2020 01:00:00  week_day=6
+
 ```
 ### Coordinates
 ### Electronics
->##### Ohm's Law Calculator
->>###### ohms_law(ohms, milliamperes, volts)
 ```python
 >>> from cedargrove_unit_converter.electronics import ohms_law
->>> ohms_law(ohms=1000, volts=3.3)
+>>> ohms_law(ohms=1000, volts=3.3)  # Ohm's Law Calculator
 3.3  # current in milliamperes
 >>> ohms_law(volts=5, milliamperes=100)
 50.0  # resistance in ohms
 >>> ohms_law(milliamperes=5, ohms=2000)
 10.0  # voltage in volts
->>> 
+
 ```
 ### Energy
 ### Frequency
@@ -91,98 +86,69 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Power
 ### Pressure
 ### Speed/Velocity
->##### Meters-Per-Second to Feet-Per-Second Converter (_under development_)
->>###### mps_to_fps(velocity_mps)
 ```python
->>> from cedargrove_unit_converter.velocity import mps_to_fps
->>> mps_to_fps(22)
-xxxx
->>>
+>>> from cedargrove_unit_converter.velocity import *
+>>> mps_to_fps(100)        # Meters-Per-Second to Feet-Per-Second Converter
+328.1
+
+>>> fps_to_mps(328.1)      # Feet-Per-Second to Meters-Per-Second Converter
+100.0
+
+>>> kmph_to_mph(68)        # Kilometers-Per_Hour to Miles-Per_Hour Converter
+42.2552
+
+>>> mph_to_kmph(42.2552)   # Miles-Per_Hour to Kilometers-Per_Hour Converter
+68.0
+
+>>> knots_to_kmph(22)      # Knots to Kilometers-Per-Hour Converter
+40.744
+
+>>> kmph_to_knots(40.744)  # Kilometers-Per-Hour to Knots Converter
+22.0
+
+>>> knots_to_mph(22)       # Knots to Miles-Per-Hour Converter
+25.322
+
+>>> mph_to_knots(25.322)   # Miles-Per-Hour to Knots Converter
+22.0
+
 ```
->##### 
-Feet-Per-Second to Meters-Per-Second Converter (_under development_)
->>###### fps_to_mps(velocity_fps)
-```python
->>> from cedargrove_unit_converter.velocity import fps_to_mps
->>> fps_to_mps(xxxx)
-22
->>>
-```
-
-
-
 ### Temperature
->##### Celsius to Fahrenheit Converter
->>###### celsius_to_fahrenheit(deg_c)
 ```python
->>> from cedargrove_unit_converter.temperature import celsius_to_fahrenheit
->>> celsius_to_fahrenheit(100)
+>>> from cedargrove_unit_converter.temperature import *
+>>> celsius_to_fahrenheit(100)  # Celsius to Fahrenheit Converter
 212.0
->>> celsius_to_fahrenheit(0)
+>>> celsius_to_fahrenheit(0) 
 32.0
->>>
-```
->##### Fahrenheit to Celsius Converter
->>###### fahrenheit_to_celsius(deg_f)
-```python
->>> from cedargrove_unit_converter.temperature import fahrenheit_to_celsius
->>> fahrenheit_to_celsius(32)
+
+>>> fahrenheit_to_celsius(32)   # Fahrenheit to Celsius Converter
 0.0
 >>> fahrenheit_to_celsius(212)
 100.0
->>>
-```
->##### Celsius to Kelvin Converter
->>###### celsius_to_kelvin(deg_c)
 
-```python
->>> from cedargrove_unit_converter.temperature import celsius_to_kelvin
->>> celsius_to_kelvin(0)
+>>> celsius_to_kelvin(0)        # Celsius to Kelvin Converter
 273.15
->>>
-```
->##### Kelvin to Celsius Converter
->>###### kelvin_to_celsius(kelvins)
-```python
->>> from cedargrove_unit_converter.temperature import kelvin_to_celsius
->>> kelvin_to_celsius(273.15)
+
+>>> kelvin_to_celsius(273.15)   # Kelvin to Celsius Converter
 0.0
->>>
-```
->##### Dew Point Converter
->>###### dew_point(deg_c, humidity)
-```python
->>> from cedargrove_unit_converter.temperature import dew_point
->>> dew_point(30, 50)
+
+>>> dew_point(30, 50)           # Dew Point Converter
 18.46
->>>
-```
->##### Heat Index Converter
->>###### heat_index(deg_c, humidity, verbose=False)
-```python
->>> from cedargrove_unit_converter.temperature import heat_index
->>> heat_index(30, 50)
+>>> dew_point(30, 50, verbose=True)
+(18.46, 'Caution: Somewhat uncomfortable for most people.')
+
+>>> heat_index(30, 50)          # Heat Index Converter
 31.1
 >>> heat_index(30, 50, verbose=True)
 (31.1, 'Caution: Fatigue is possible with prolonged exposure and activity. 
            Continuing activity could result in heat cramps.')
->>>
-```
->##### Wind Chill Converter (_under development_)
->>###### wind_chill(deg_c, wind_vel_kmph, verbose=False)
-```python
->>> from cedargrove_unit_converter.temperature import wind_chill
->>> wind_chill(tt, ww)
+
+>>> wind_chill(tt, ww)  # Wind Chill Converter (_under development_)
 wcwcwcwcwc
->>>
-```
->##### Apparent Temperature Converter (_under development_)
->>###### apparent_temperature(deg_c, humidity, wind_vel_kmph, verbose=False)
-```python
->>> from cedargrove_unit_converter.temperature import apparent_temperature
->>> apparent_temperature(tt, hh, ww)
+
+>>> apparent_temperature(tt, hh, ww)  # Apparent Temperature Converter (_under development_)
 atatatatat
->>>
+
 ```
 ### Volume
 

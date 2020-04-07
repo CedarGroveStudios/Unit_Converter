@@ -41,7 +41,7 @@ def kmph_to_mph(velocity_kmph):
 
 # Miles-Per_Hour to Kilometers-Per_Hour converter
 def mph_to_kmph(velocity_mph):
-        return (velocity_kmph / 0.6214)
+        return (velocity_mph / 0.6214)
 
 # Knots to Kilometers-Per-Hour converter
 def knots_to_kmph(velocity_knots):
@@ -51,12 +51,12 @@ def knots_to_kmph(velocity_knots):
 def kmph_to_knots(velocity_kmph):
     return (velocity_kmph / 1.852)
 
-# Knots to Nautical_Miles-Per-Hour converter
+# Knots to Miles-Per-Hour converter
 def knots_to_mph(velocity_knots):
     return (velocity_knots * 1.151)
 
-# Nautical_Miles-Per-Hour to Knots converter
-def mph_to_knots(velocity_nmph):
+# Miles-Per-Hour to Knots converter
+def mph_to_knots(velocity_mph):
     return (velocity_mph / 1.151)
 
 # Speed of Light constant (meters-per-second)
@@ -69,7 +69,6 @@ def speed_of_sound(medium="air"):
         return 344  # 20deg_c at 1.0 atm
     if medium == "water":
         return 1470
-    if medium == steel:
+    if medium == "steel":
         return 5000
     return None
-    
