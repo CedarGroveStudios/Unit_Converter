@@ -4,6 +4,7 @@
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/WARNING.jpg)
 
+### Acoustics
 ### Angle
 ### Area
 ### Chronos (Time)
@@ -66,6 +67,7 @@ code.py output:
 xST: 11/1/2020 01:00:00  week_day=6
 
 ```
+### Color
 ### Coordinates
 ### Electronics
 ```python
@@ -78,12 +80,12 @@ xST: 11/1/2020 01:00:00  week_day=6
 
 ```
 ### Energy
-### Frequency
 ### Length
 ### Mass/Weight
 ### Music
 ### Power
 ### Pressure
+### RF Communications
 ### Speed/Velocity
 ```python
 >>> mps_to_fps(100)        # Meters-Per-Second to Feet-Per-Second Converter
