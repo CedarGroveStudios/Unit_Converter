@@ -8,9 +8,7 @@
 ### Area
 ### Chronos (Time)
 ```python
->>> # Leap Year Determination
->>> from cedargrove_unit_converter.chronos import leap_year
->>> leap_year(2000)
+>>> leap_year(2000)  # Leap Year Determination
 True
 >>> leap_year(2020)
 True
@@ -71,7 +69,6 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Coordinates
 ### Electronics
 ```python
->>> from cedargrove_unit_converter.electronics import ohms_law
 >>> ohms_law(ohms=1000, volts=3.3)  # Ohm's Law Calculator
 3.3  # current in milliamperes
 >>> ohms_law(volts=5, milliamperes=100)
@@ -89,7 +86,6 @@ xST: 11/1/2020 01:00:00  week_day=6
 ### Pressure
 ### Speed/Velocity
 ```python
->>> from cedargrove_unit_converter.velocity import *
 >>> mps_to_fps(100)        # Meters-Per-Second to Feet-Per-Second Converter
 328.1
 
@@ -131,7 +127,6 @@ xST: 11/1/2020 01:00:00  week_day=6
 ```
 ### Temperature
 ```python
->>> from cedargrove_unit_converter.temperature import *
 >>> celsius_to_fahrenheit(100)  # Celsius to Fahrenheit Converter
 212.0
 >>> celsius_to_fahrenheit(0) 
