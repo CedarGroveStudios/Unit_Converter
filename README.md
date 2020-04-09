@@ -8,11 +8,11 @@
 ### Angle
 ### Area
 ### Chronos (Time)
-#### Leap Year
-#### Automatic Daylight Saving Time
+>#### Leap Year
+>#### Automatic Daylight Saving Time
 ### Coordinates
 ### Electronics
-#### Ohm's Law
+>#### Ohm's Law
 ```python
 >>> ohms_law(ohms=1000, volts=3.3)  # Ohm's Law Calculator
 3.3  # current in milliamperes
@@ -26,10 +26,19 @@
 ### Length
 ### Mass/Weight
 ### Music
+>#### MIDI
+>>#### Note Or Note Name
+>>#### Note to Note Name
+>>#### Note Name to Note
+>>#### Note to Frequency
+>>#### Frequency to Note
+>>#### Decode Control Change Code
 ### Power
 ### Pressure
 ### RF Communications
 ### Speed/Velocity
+>#### Meters-Per-Second to Feet-Per-Second
+>#### Feet-Per-Second to Meters-Per-Second
 ```python
 >>> mps_to_fps(100)        # Meters-Per-Second to Feet-Per-Second Converter
 328.1
