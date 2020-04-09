@@ -7,7 +7,7 @@
 ### Acoustics
 ### Angle
 ### Area
-### Chronos (Time)
+### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs-chronos.pdf)
 >#### Leap Year
 >#### Automatic Daylight Saving Time
 ### Coordinates
