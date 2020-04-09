@@ -1,9 +1,10 @@
 # Unit Converter
  An in-development Cornucopia of CircuitPython Unit Converters
- 
+
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/WARNING.jpg)
 
+### Acoustics
 ### Angle
 ### Area
 ### Chronos (Time)
@@ -22,12 +23,12 @@
 
 ```
 ### Energy
-### Frequency
 ### Length
 ### Mass/Weight
 ### Music
 ### Power
 ### Pressure
+### RF Communications
 ### Speed/Velocity
 ```python
 >>> mps_to_fps(100)        # Meters-Per-Second to Feet-Per-Second Converter
@@ -73,7 +74,7 @@
 ```python
 >>> celsius_to_fahrenheit(100)  # Celsius to Fahrenheit Converter
 212.0
->>> celsius_to_fahrenheit(0) 
+>>> celsius_to_fahrenheit(0)
 32.0
 
 ```
@@ -105,7 +106,7 @@
 >>> heat_index(30, 50)          # Heat Index Converter
 31.1
 >>> heat_index(30, 50, verbose=True)
-(31.1, 'Caution: Fatigue is possible with prolonged exposure and activity. 
+(31.1, 'Caution: Fatigue is possible with prolonged exposure and activity.
            Continuing activity could result in heat cramps.')
 
 ```
@@ -120,5 +121,3 @@ atatatatat
 
 ```
 ### Volume
-
-
