@@ -7,21 +7,12 @@
 ### Acoustics
 ### Angle
 ### Area
-### Chronos (Time)
+### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs-chronos.pdf)
 >#### Leap Year
 >#### Automatic Daylight Saving Time
 ### Coordinates
 ### Electronics
 >#### Ohm's Law
-```python
->>> ohms_law(ohms=1000, volts=3.3)  # Ohm's Law Calculator
-3.3  # current in milliamperes
->>> ohms_law(volts=5, milliamperes=100)
-50.0  # resistance in ohms
->>> ohms_law(milliamperes=5, ohms=2000)
-10.0  # voltage in volts
-
-```
 ### Energy
 ### Length
 ### Mass/Weight
