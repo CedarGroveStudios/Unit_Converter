@@ -7,67 +7,11 @@
 ### Angle
 ### Area
 ### Chronos (Time)
-```python
->>> leap_year(2000)  # Leap Year Determination
-True
->>> leap_year(2020)
-True
->>> leap_year(2021)
-False
->>> leap_year(2024)
-True
->>> leap_year(2100)
-False
->>> leap_year(2104)
-True
-
-```
-```python
-# Structured Time to DST Converter
-# Example code
-import time
-from cedargrove_unit_converter.chronos import adjust_dst
-
-# Today's date: 11/01/2020 00:00 Standard Time (xST)
-datetime = time.struct_time((2020,11,1,0,0,0,6,0,-1))
-
-# Check datetime and adjust if DST
-adj_datetime, is_dst = adjust_dst(datetime)
-
-if is_dst:
-    flag_text = "DST"
-else:
-    flag_text = "xST"
-
-# Print the submitted time    
-print("     {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(
-      datetime.tm_mon, datetime.tm_mday, datetime.tm_year,
-      datetime.tm_hour, datetime.tm_min, datetime.tm_sec,
-      datetime.tm_wday))
-
-# Print the adjusted time
-print("{}: {}/{}/{} {:02}:{:02}:{:02}  week_day={}".format(flag_text,
-      adj_datetime.tm_mon, adj_datetime.tm_mday, adj_datetime.tm_year,
-      adj_datetime.tm_hour, adj_datetime.tm_min, adj_datetime.tm_sec,
-      adj_datetime.tm_wday))
-
-```
-```python
-# for 11/1/2020 00:00 xST input; first Sunday of November 01:00 DST
-code.py output:
-     11/1/2020 00:00:00  week_day=6
-DST: 11/1/2020 01:00:00  week_day=6
-```
-```python
-# for 11/1/2020 01:00 xST input; first Sunday of November 02:00 DST
-# falls back to 01:00 xST
-code.py output:
-     11/1/2020 01:00:00  week_day=6
-xST: 11/1/2020 01:00:00  week_day=6
-
-```
+#### Leap Year
+#### Automatic Daylight Saving Time
 ### Coordinates
 ### Electronics
+#### Ohm's Law
 ```python
 >>> ohms_law(ohms=1000, volts=3.3)  # Ohm's Law Calculator
 3.3  # current in milliamperes

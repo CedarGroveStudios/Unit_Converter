@@ -61,14 +61,14 @@ def mph_to_knots(velocity_mph):
 
 # Speed of Light constant (meters-per-second)
 def speed_of_light():
-    return (2.998 * 10**8)
+    return (299792458)
 
 # Speed of Sound constant (meters-per-second) in air, water, steel
 def speed_of_sound(medium="air"):
     if medium == "air":
-        return 344  # 20deg_c at 1.0 atm
+        return 343  # 20deg_c at 1.0 atm
     if medium == "water":
-        return 1470
+        return 1481
     if medium == "steel":
-        return 5000
+        return 5120
     return None
