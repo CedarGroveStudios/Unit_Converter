@@ -7,17 +7,17 @@
 ### Acoustics
 ### Angle
 ### Area
-### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs-chronos.pdf)
+### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_chronos.pdf)
 >#### Leap Year
 >#### Automatic Daylight Saving Time
 ### Coordinates
-### Electronics
+### [Electronics](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_electronics.pdf)
 >#### Ohm's Law
 ### Energy
 ### Length
 ### Mass/Weight
 ### Music
->#### MIDI
+>#### [MIDI](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_music_MIDI.pdf)
 >>#### Note Or Note Name
 >>#### Note to Note Name
 >>#### Note Name to Note
