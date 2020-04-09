@@ -27,7 +27,7 @@
 ### Power
 ### Pressure
 ### RF Communications
-### Speed/Velocity
+### [Speed/Velocity](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_velocity.pdf)
 >#### Meters-Per-Second to Feet-Per-Second
 >#### Feet-Per-Second to Meters-Per-Second
 ```python
@@ -70,7 +70,7 @@
 22.0
 
 ```
-### Temperature
+### [Temperature](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_temperature.pdf)
 ```python
 >>> celsius_to_fahrenheit(100)  # Celsius to Fahrenheit Converter
 212.0
