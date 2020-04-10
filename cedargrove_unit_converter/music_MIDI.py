@@ -133,7 +133,7 @@ controllers = [
     ('Data_Entry_MSB'),
     ('Chan_Vol'),
     ('Balance'),
-    ('Ctrl_9',),
+    ('Ctrl_9'),
     ('Pan_Ctrl'),
     ('Exp_Pedal'),
     ('FX_Ctrl_1'),
@@ -220,12 +220,12 @@ controllers = [
     ('FX_3_Depth'),
     ('FX_4_Depth'),
     ('FX_5_Depth'),
-    ('Data_Inc', 'Value'),
-    ('Data_Dec', 'Value'),
-    ('NRPN_LSB', 'Value'),
-    ('NRPN_MSB', 'Value'),
-    ('RPN_LSB', 'Value'),
-    ('RPN_MSB', 'Value'),
+    ('Data_Inc + Value'),
+    ('Data_Dec + Value'),
+    ('NRPN_LSB + Value'),
+    ('NRPN_MSB + Value'),
+    ('RPN_LSB + Value'),
+    ('RPN_MSB + Value'),
     ('Ctrl_102'),
     ('Ctrl_103'),
     ('Ctrl_104'),
@@ -246,7 +246,7 @@ controllers = [
     ('Ctrl_119'),
     ('All_Sound_Off'),
     ('Reset_All_Ctrls'),
-    ('Local_Ctrl_sw'),
+    ('Local_Ctrl_Sw'),
     ('All_Notes_Off'),
     ('Omni_Mode_Off'),
     ('Omni_Mode_On'),
@@ -256,7 +256,7 @@ controllers = [
 
 def cc_code_to_description(cc_code):
     """ Provides a controller description decoded from a Control Change
-          controller code value.
+          code value.
           Ref: https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2
     """
     return controllers[cc_code]
