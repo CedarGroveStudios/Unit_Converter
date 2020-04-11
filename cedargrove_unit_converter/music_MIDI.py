@@ -109,7 +109,7 @@ def note_to_frequency(note):
         return pow(2, (note - 69) / 12) * 440
     else: return None  # note value outside valid range
 
-def frequency_to_note(frequency):
+def frequency_to_note(freq):
     """ Translates a frequency in Hertz (Hz) to the closest MIDI sequential
           note value. Frequency values are floating point. Note values are of
           integer type in the range of 0 to 127 (inclusive). If the input
