@@ -1,5 +1,5 @@
 # Unit Converter
- An in-development Cornucopia of CircuitPython Unit Converters and maybe a few Constants.
+ An in-development Cornucopia of CircuitPython Unit Converters with perhaps a couple of Constants.
 
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/WARNING.jpg)
@@ -30,19 +30,21 @@
 #### [Speed/Velocity](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_velocity.pdf)
 >>##### Meters-Per-Second to Feet-Per-Second
 >>##### Feet-Per-Second to Meters-Per-Second
->>##### Kilometers-Per_Hour to Miles-Per_Hour Converter
->>##### Miles-Per_Hour to Kilometers-Per_Hour Converter
->>##### Knots to Kilometers-Per-Hour Converter
->>##### Kilometers-Per-Hour to Knots Converter
->>##### Knots to Miles-Per-Hour Converter
->>##### Miles-Per-Hour to Knots Converter
+>>##### Kilometers-Per_Hour to Miles-Per_Hour
+>>##### Miles-Per_Hour to Kilometers-Per_Hour
+>>##### Knots to Kilometers-Per-Hour
+>>##### Kilometers-Per-Hour to Knots
+>>##### Knots to Miles-Per-Hour
+>>##### Miles-Per-Hour to Knots
+>>##### Velocity of Light (Constant)
+>>##### Velocity of Sound (Constant)
 #### [Temperature](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_temperature.pdf)
 >>##### Celsius to Fahrenheit
->>##### Fahrenheit to Celsius Converter
->>##### Celsius to Kelvin Converter
->>##### Kelvin to Celsius Converter
->>##### Dew Point Converter
->>##### Heat Index Converter
->>##### Wind Chill Converter (_under development_)
->>##### Apparent Temperature Converter (_under development_)
+>>##### Fahrenheit to Celsius
+>>##### Celsius to Kelvin
+>>##### Kelvin to Celsius
+>>##### Dew Point
+>>##### Heat Index
+>>##### Wind Chill (_under development_)
+>>##### Apparent Temperature (_under development_)
 #### Volume
