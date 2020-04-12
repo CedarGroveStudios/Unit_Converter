@@ -29,35 +29,35 @@ A CircuitPython module for speed/velocity conversion.
 
 # Meters-Per-Second to Feet-Per-Second converter
 def mps_to_fps(velocity_mps):
-    return (velocity_mps * 3.281)
+    return (velocity_mps * 3.28084)
 
 # Feet-Per-Second to Meters-Per-Second converter
 def fps_to_mps(velocity_fps):
-    return (velocity_fps / 3.281)
+    return (velocity_fps / 3.28084)
 
 # Kilometers-Per_Hour to Miles-Per_Hour converter
 def kmph_to_mph(velocity_kmph):
-    return (velocity_kmph * 0.6214)
+    return (velocity_kmph * 0.621427)
 
 # Miles-Per_Hour to Kilometers-Per_Hour converter
 def mph_to_kmph(velocity_mph):
-        return (velocity_mph / 0.6214)
+        return (velocity_mph / 0.621427)
 
 # Knots to Kilometers-Per-Hour converter
 def knots_to_kmph(velocity_knots):
-    return (velocity_knots * 1.852)
+    return (velocity_knots * 1.85184)
 
 # Kilometers-Per-Hour to Knots converter
 def kmph_to_knots(velocity_kmph):
-    return (velocity_kmph / 1.852)
+    return (velocity_kmph / 1.85184)
 
 # Knots to Miles-Per-Hour converter
 def knots_to_mph(velocity_knots):
-    return (velocity_knots * 1.151)
+    return (velocity_knots * 1.150783)
 
 # Miles-Per-Hour to Knots converter
 def mph_to_knots(velocity_mph):
-    return (velocity_mph / 1.151)
+    return (velocity_mph / 1.150783)
 
 # Velocity of Light constant (meters-per-second)
 def velocity_of_light():
