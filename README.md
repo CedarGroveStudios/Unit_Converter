@@ -1,10 +1,9 @@
 # Unit Converter
- An in-development Cornucopia of CircuitPython Unit Converters with a couple of Constants.
+ An in-development Cornucopia of CircuitPython Unit Converters with perhaps a couple of Constants.
 
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/social_wide.png)
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/photos%20and%20graphics/WARNING.jpg)
 
-#### Acoustics
 #### Angle
 #### Area
 #### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/master/docs/pseudo_readthedocs_chronos.pdf)
