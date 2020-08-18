@@ -93,7 +93,7 @@ def heat_index(deg_c, humidity, verbose=False):
     c = (0, -42.379, 2.04901523, 10.14333127, -0.22475541, -0.00683783,
          -0.05481717, 0.00122874, 0.00085282, -0.00000199)
 
-    # Formula (Fahrenheit method: Schoen 2005)
+    # Formula (Fahrenheit method, +/-1.3F: Rothfusz NWS-SR90-23, 1990, https://www.weather.gov/media/ffc/ta_htindx.PDF)
     h_index_f = round(c[1] + (c[2] * t) + (c[3] * r) + (c[4] * t * r) +
                      (c[5] * t**2) + (c[6] * r**2) + (c[7] * t**2 * r) +
                      (c[8] * t * r**2) + (c[9] * t**2 * r**2), 1)
