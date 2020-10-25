@@ -46,7 +46,7 @@ def kelvin_to_celsius(kelvins):
 # Dew Point converter (degrees Celsius)
 def dew_point(deg_c, humidity, verbose=False):
     message_list = (
-                    (-99, 10, "Safe",   ": A bit dry for some."),
+                    (-9999, 10, "Safe",   ": A bit dry for some."),
                     (10, 12, "Safe",    ": Very comfortable."),
                     (13, 16, "Safe",    ": Comfortable."),
                     (16, 18, "Safe",    ": Okay for most."),
@@ -54,7 +54,7 @@ def dew_point(deg_c, humidity, verbose=False):
                     (21, 24, "Caution", ": Very humid, quite uncomfortable."),
                     (24, 26, "Extreme Caution",
                     ": Extremely uncomfortable, fairly oppresive."),
-                    (26, 99, "DANGER",
+                    (26, 9999, "DANGER",
                     ": Severely high, potentially deadly for asthma sufferers.")
                     )
 
