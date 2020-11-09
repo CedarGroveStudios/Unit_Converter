@@ -80,7 +80,7 @@ def detect_dst(datetime):
             return True      # DST
         if prev_sunday_date <= 7:  # First Sunday of month
             # determine current xST threshold
-            # year, March, previous Sunday date, 01 hours xDT, 00 min, 00 sec
+            # year, November, previous Sunday date, 01 hours xDT, 00 min, 00 sec
             xst_thresh = time.mktime(time.struct_time((datetime.tm_year,
                                                        11, prev_sunday_date, 1,
                                                        0, 0, 0, -1, -1)))
