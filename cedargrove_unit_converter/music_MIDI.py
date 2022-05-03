@@ -1,4 +1,4 @@
-"""Copyright (c) 2020, 2021 CedarGroveStudios
+"""Copyright (c) 2020, 2021, 2022 CedarGroveStudios
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software, hardware design, and associated documentation files
@@ -30,7 +30,7 @@ cedargrove_unit_converter/music_MIDI.py 2020-04-07 v00 02:45PM
 based upon cedargrove_MIDI_util.py 2019-03-31 v00 09:20PM
 A CircuitPython method collection for processing MIDI notes.
 
-* Author(s): Cedar Grove Studios
+* Author(s): JG for Cedar Grove Studios
 
 Implementation Notes
 --------------------
@@ -48,7 +48,7 @@ __repo__ = 'https://github.com/CedarGroveStudios/Unit_Converter.git'
 
 from math import log  # required for freq_note helper
 
-# list of valid note names used by note_lexo, note_name, and name_note helpers
+# list of valid note names used by note_or_name, note_name, and name_note helpers
 note_base = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 
