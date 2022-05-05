@@ -29,7 +29,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
 
 
 class Spectrum:
-    """ Converts a spectrum index value consisting of a positivive numeric value
+    """ Converts a spectrum index value consisting of a positive numeric value
     (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
     index position on a graduated and blended multicolor spectrum.
 
@@ -41,11 +41,12 @@ class Spectrum:
         wavelength-of-light representation. The spectrum does not wrap; the
         first and last colors are not blended to each other.
       - "continuous" mode blends the color list's first color and last color
-        at the start and end, creating a continuously blended spectrum.
+        at the start and end, creating a continuously blended spectrum. This is
+        the default mode.
 
     Future modes may include:
       - "stacked" spectrum with the first color at full brightness with
-        index = 0.0; last color aat full brightness when index = 1.0.
+        index = 0.0; last color at full brightness when index = 1.0.
       - "wrapped" is the same as "stacked" except final color is blended with
         the first as the index approaches 1.0.
 
@@ -57,14 +58,14 @@ class Spectrum:
 
     :param list colors: A list of 24-bit color values. Up to 260 colors can be
                         included in the list, depending on available memory.
-    :param string mode: Specifies the type of spectrum, "light" or "normal".
-                        Defaults to "normal".
+    :param string mode: Specifies the type of spectrum, "light" or "continuous".
+                        Defaults to "continuous".
     :param float gamma: A positive float value to adjust color intensity for
                         human eye perception. Accepts a range of values between
                         0.0 and 3.0. Defaults to 0.55.
     """
 
-    def __init__(self, colors=None, mode="normal", gamma=0.55):
+    def __init__(self, colors=None, mode="continuous", gamma=0.55):
         self._colors = colors
         self._mode = mode
         self._gamma = min(max(gamma, 0), 3.0)

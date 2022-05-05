@@ -124,7 +124,8 @@ def frequency_to_note(freq):
     integer type in the range of 0 to 127 (inclusive). If the input
     frequency is less than the corresponding frequency for note 0 or
     greater than note 127, the input is invalid and the value of None
-    is returned. Ref: MIDI Tuning Standard formula.
+    is returned. Ref: MIDI Tuning Standard formula:
+    https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2
     """
     if (pow(2, (0 - 69) / 12) * 440) <= freq <= (pow(2, (127 - 69) / 12) * 440):
         return int(69 + (12 * log(freq / 440, 2)))

@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-# Copyright (c) 2020, 2021 Cedar Grove Studios
+# Copyright (c) 2020, 2021, 2022 Cedar Grove Studios
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 ================================================================================
 A CircuitPython module for electronics converters and calculators.
 
-* Author(s): Cedar Grove Studios
+* Author(s): JG for Cedar Grove Studios
 """
 
 # Ohms' Law calculator/converter
