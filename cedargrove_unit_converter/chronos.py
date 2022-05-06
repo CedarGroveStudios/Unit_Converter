@@ -31,7 +31,7 @@ import time
 
 
 def leap_year(year):
-    """Detects if the input is a valid leap year. """
+    """Detects if the input is a valid leap year."""
     if (year % 4) == 0:
         if (year % 100) == 0:
             if (year % 400) == 0:

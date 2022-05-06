@@ -34,7 +34,7 @@ def ohms_law(ohms=None, milliamperes=None, volts=None):
     return the missing (or =None) value."""
 
     if (ohms, milliamperes, volts).count(None) > 1:
-        raise ValueError('At least two values must be provided.')
+        raise ValueError("At least two values must be provided.")
 
     # Calculate resistance in Ohms
     if ohms == None:
@@ -48,4 +48,4 @@ def ohms_law(ohms=None, milliamperes=None, volts=None):
     if volts == None:
         return ohms * (milliamperes / 1000.0)
 
-    raise ValueError('Too many values. Only two are needed.')
+    raise ValueError("Too many values. Only two are needed.")

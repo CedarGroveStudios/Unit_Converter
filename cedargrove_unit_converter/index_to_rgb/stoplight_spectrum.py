@@ -43,7 +43,7 @@ def index_to_rgb(index=0, gamma=0.5):
         grn = map_range(band, 0, 300, 0.25, 1) ** gamma
         blu = 0.0
     if band >= 300:  # yellow to red
-        red = 1.0 ** gamma
+        red = 1.0**gamma
         grn = map_range(band, 300, 600, 1.0, 0.0) ** gamma
         blu = 0.0
 

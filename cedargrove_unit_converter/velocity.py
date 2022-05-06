@@ -73,11 +73,11 @@ def velocity_of_light():
 
 
 # Velocity of Sound constant (meters-per-second) in air, water, steel
-def velocity_of_sound(medium='air'):
-    if medium == 'air':
+def velocity_of_sound(medium="air"):
+    if medium == "air":
         return 343  # 20deg_c at 1.0 atm
-    if medium == 'water':
+    if medium == "water":
         return 1481
-    if medium == 'steel':
+    if medium == "steel":
         return 5120
     return None

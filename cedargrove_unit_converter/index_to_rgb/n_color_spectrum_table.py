@@ -7,7 +7,7 @@
 
 
 def map_range(x, in_min, in_max, out_min, out_max):
-    """ Maps and constrains an input value from one range of values to another.
+    """Maps and constrains an input value from one range of values to another.
     (from adafruit_simpleio)
 
     :return: Returns value mapped to new range
@@ -29,7 +29,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
 
 
 class Spectrum:
-    """ Converts a spectrum index value consisting of a positive numeric value
+    """Converts a spectrum index value consisting of a positive numeric value
     (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
     index position on a graduated and blended multicolor spectrum.
 
@@ -68,7 +68,7 @@ class Spectrum:
         self._colors = colors
         self._mode = mode
         self._gamma = min(max(gamma, 0), 3.0)
-        self._index_granularity = (2 ** 16) - 1  # maximum index granularity
+        self._index_granularity = (2**16) - 1  # maximum index granularity
 
         # Select normal or "wavelength-of-light" -style spectrum
         if self._mode == "light":
@@ -79,12 +79,17 @@ class Spectrum:
         self._number_of_zones = len(self._colors)
 
         self._reds = [((r >> 16) & 0xFF) for r in colors]
-        self._grns = [((g >>  8) & 0xFF) for g in colors]
-        self._blus = [((b >>  0) & 0xFF) for b in colors]
+        self._grns = [((g >> 8) & 0xFF) for g in colors]
+        self._blus = [((b >> 0) & 0xFF) for b in colors]
 
-        self._zones = [(zone / self._number_of_zones, (zone + 1) / self._number_of_zones) for zone in range(int(self._number_of_zones))]
+        self._zones = [
+            (zone / self._number_of_zones, (zone + 1) / self._number_of_zones)
+            for zone in range(int(self._number_of_zones))
+        ]
 
-        self._gamma_correction = [int(pow(value / 0xFF, self._gamma) * 0xFF) for value in range(0, 0xFF + 1)]
+        self._gamma_correction = [
+            int(pow(value / 0xFF, self._gamma) * 0xFF) for value in range(0, 0xFF + 1)
+        ]
 
     @property
     def mode(self):
@@ -97,10 +102,12 @@ class Spectrum:
     @gamma.setter
     def gamma(self, new_gamma=1.0):
         self._gamma = new_gamma
-        self._gamma_correction = [int(pow(value / 0xFF, self._gamma) * 0xFF) for value in range(0, 0xFF + 1)]
+        self._gamma_correction = [
+            int(pow(value / 0xFF, self._gamma) * 0xFF) for value in range(0, 0xFF + 1)
+        ]
 
     def color(self, index=0):
-        """ Converts a spectrum index value to an RGB color value.
+        """Converts a spectrum index value to an RGB color value.
 
         :param float index:
 
@@ -108,16 +115,42 @@ class Spectrum:
         :rtype: integer
         """
 
-        self._index = ((abs(index) * self._index_granularity) % self._index_granularity) / self._index_granularity
+        self._index = (
+            (abs(index) * self._index_granularity) % self._index_granularity
+        ) / self._index_granularity
 
         zone = int(self._number_of_zones * index)
         next_zone = (zone + 1) % self._number_of_zones
         zone_start = self._zones[zone][0]
         zone_end = self._zones[zone][1]
 
-        red = int(map_range(self._index, zone_start, zone_end, self._reds[zone], self._reds[next_zone]))
-        grn = int(map_range(self._index, zone_start, zone_end, self._grns[zone], self._grns[next_zone]))
-        blu = int(map_range(self._index, zone_start, zone_end, self._blus[zone], self._blus[next_zone]))
+        red = int(
+            map_range(
+                self._index,
+                zone_start,
+                zone_end,
+                self._reds[zone],
+                self._reds[next_zone],
+            )
+        )
+        grn = int(
+            map_range(
+                self._index,
+                zone_start,
+                zone_end,
+                self._grns[zone],
+                self._grns[next_zone],
+            )
+        )
+        blu = int(
+            map_range(
+                self._index,
+                zone_start,
+                zone_end,
+                self._blus[zone],
+                self._blus[next_zone],
+            )
+        )
 
         red = self._gamma_correction[red]
         grn = self._gamma_correction[grn]

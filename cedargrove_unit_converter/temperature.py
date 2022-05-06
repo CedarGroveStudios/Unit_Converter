@@ -50,18 +50,18 @@ def kelvin_to_celsius(kelvins):
 # Dew Point converter (degrees Celsius)
 def dew_point(deg_c, humidity, verbose=False):
     message_list = (
-        (-9999, 10, 'Safe', ': A bit dry for some.'),
-        (10, 12, 'Safe', ': Very comfortable.'),
-        (13, 16, 'Safe', ': Comfortable.'),
-        (16, 18, 'Safe', ': Okay for most.'),
-        (18, 21, 'Caution', ': Somewhat uncomfortable for most people.'),
-        (21, 24, 'Caution', ': Very humid, quite uncomfortable.'),
-        (24, 26, 'Extreme Caution', ': Extremely uncomfortable, fairly oppresive.'),
+        (-9999, 10, "Safe", ": A bit dry for some."),
+        (10, 12, "Safe", ": Very comfortable."),
+        (13, 16, "Safe", ": Comfortable."),
+        (16, 18, "Safe", ": Okay for most."),
+        (18, 21, "Caution", ": Somewhat uncomfortable for most people."),
+        (21, 24, "Caution", ": Very humid, quite uncomfortable."),
+        (24, 26, "Extreme Caution", ": Extremely uncomfortable, fairly oppresive."),
         (
             26,
             9999,
-            'DANGER',
-            ': Severely high, potentially deadly for asthma sufferers.',
+            "DANGER",
+            ": Severely high, potentially deadly for asthma sufferers.",
         ),
     )
 
@@ -89,29 +89,29 @@ def dew_point(deg_c, humidity, verbose=False):
 # (source: https://en.wikipedia.org/wiki/Heat_index)
 def heat_index(deg_c, humidity, verbose=False):
     message_list = (
-        (-99, 26, 'Safe', ': Heat index is not a factor.', ''),
+        (-99, 26, "Safe", ": Heat index is not a factor.", ""),
         (
             26,
             32,
-            'Caution',
-            ': Fatigue is possible with prolonged exposure and activity. ',
-            'Continuing activity could result in heat cramps.',
+            "Caution",
+            ": Fatigue is possible with prolonged exposure and activity. ",
+            "Continuing activity could result in heat cramps.",
         ),
         (
             32,
             41,
-            'Extreme Caution',
-            ': Heat cramps and heat exhaustion are possible. ',
-            'Continuing activity could result in heat stroke.',
+            "Extreme Caution",
+            ": Heat cramps and heat exhaustion are possible. ",
+            "Continuing activity could result in heat stroke.",
         ),
         (
             41,
             54,
-            'DANGER',
-            ': Heat cramps and heat exhaustion are likely. ',
-            'Heat stroke is probable with continued activity.',
+            "DANGER",
+            ": Heat cramps and heat exhaustion are likely. ",
+            "Heat stroke is probable with continued activity.",
         ),
-        (54, 99, 'EXTREME DANGER', ': Heat stroke is imminent. ', ''),
+        (54, 99, "EXTREME DANGER", ": Heat stroke is imminent. ", ""),
     )
 
     t = ((9 / 5) * deg_c) + 32  # Dry-bulb temperature in degrees Fahrenheit
@@ -138,11 +138,11 @@ def heat_index(deg_c, humidity, verbose=False):
         + (c[2] * t)
         + (c[3] * r)
         + (c[4] * t * r)
-        + (c[5] * t ** 2)
-        + (c[6] * r ** 2)
-        + (c[7] * t ** 2 * r)
-        + (c[8] * t * r ** 2)
-        + (c[9] * t ** 2 * r ** 2),
+        + (c[5] * t**2)
+        + (c[6] * r**2)
+        + (c[7] * t**2 * r)
+        + (c[8] * t * r**2)
+        + (c[9] * t**2 * r**2),
         1,
     )
     # Convert to degrees Celsius
