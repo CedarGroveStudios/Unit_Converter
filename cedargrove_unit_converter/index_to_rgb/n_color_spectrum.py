@@ -132,4 +132,9 @@ class Spectrum:
         grn = int(round((grn**self._gamma) * 0xFF, 0))
         blu = int(round((blu**self._gamma) * 0xFF, 0))
 
+        """# need to test this improvement over ^
+        red = min(int(round((red**self._gamma), 0)), 0xFF)
+        grn = min(int(round((grn**self._gamma), 0)), 0xFF)
+        blu = min(int(round((blu**self._gamma), 0)), 0xFF)"""
+
         return (int(red) << 16) + (int(grn) << 8) + int(blu)
