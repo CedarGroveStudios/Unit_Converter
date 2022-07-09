@@ -2,7 +2,7 @@
  An in-development Cornucopia of CircuitPython Unit Converters with perhaps a couple of Constants.
 
  ![Image of Module](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/photos%20and%20graphics/social_wide.png)
- 
+
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/photos%20and%20graphics/WARNING.jpg)
 
 #### Angle
@@ -11,6 +11,8 @@
 >##### Leap Year
 >##### Automatic Daylight Saving Time
 #### Color
+>##### [ColorFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/color/pseudo_readthedocs_colorfader.pdf)
+>##### [PaletteFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/color/pseudo_readthedocs_palettefader.pdf)
 >##### [Color Spectral Index to RGB](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_color_index_to_rgb.pdf)
 >>##### Grayscale Spectrum
 >>##### Iron Temperature Spectrum
