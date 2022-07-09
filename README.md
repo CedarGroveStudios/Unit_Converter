@@ -11,8 +11,8 @@
 >##### Leap Year
 >##### Automatic Daylight Saving Time
 #### Color
->##### [ColorFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/color/pseudo_readthedocs_colorfader.pdf)
->##### [PaletteFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/color/pseudo_readthedocs_palettefader.pdf)
+>##### [ColorFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo%20readthedocs%20colorfader.pages)
+>##### [PaletteFader](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_palettefader.pdf)
 >##### [Color Spectral Index to RGB](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_color_index_to_rgb.pdf)
 >>##### Grayscale Spectrum
 >>##### Iron Temperature Spectrum
