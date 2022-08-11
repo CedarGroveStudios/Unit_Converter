@@ -16,7 +16,10 @@
 >##### [Color Spectral Index to RGB](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_color_index_to_rgb.pdf)
 >>##### Grayscale Spectrum
 >>##### Iron Temperature Spectrum
+>>##### Stoplight Spectrum
 >>##### Visible Light Spectrum
+>>##### N-Color Spectrum (memory tuned)
+>>##### N-Color Spectrum (performance tuned)
 #### Coordinates
 #### [Electronics](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_electronics.pdf)
 >##### Ohm's Law
