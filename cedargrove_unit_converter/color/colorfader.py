@@ -39,7 +39,7 @@ def color_fader(self, source_color=None, brightness=1.0, gamma=1.0):
     :return int: The adjusted color value."""
 
     if source_color is None:
-        return
+        return source_color
 
     # Extract primary colors and scale to brightness
     r = min(int(brightness * ((source_color & 0xFF0000) >> 16)), 0xFF)
