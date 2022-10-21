@@ -5,8 +5,6 @@
 
  ![WARNING](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/photos%20and%20graphics/WARNING.jpg)
 
-#### Angle
-#### Area
 #### [Chronos (Time)](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_chronos.pdf)
 >##### Leap Year
 >##### Automatic Daylight Saving Time
@@ -20,12 +18,8 @@
 >>##### Visible Light Spectrum
 >>##### N-Color Spectrum (memory tuned)
 >>##### N-Color Spectrum (performance tuned)
-#### Coordinates
 #### [Electronics](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_electronics.pdf)
 >##### Ohm's Law
-#### Energy
-#### Length
-#### Mass/Weight
 #### Music
 >##### [MIDI](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_music_MIDI.pdf)
 >>##### Note Or Note Name
@@ -34,9 +28,6 @@
 >>##### Note to Frequency
 >>##### Frequency to Note
 >>##### Decode Control Change Code
-#### Power
-#### Pressure
-#### RF Communications
 #### [Speed/Velocity](https://github.com/CedarGroveStudios/Unit_Converter/blob/main/docs/pseudo_readthedocs_velocity.pdf)
 >>##### Meters-Per-Second to Feet-Per-Second
 >>##### Feet-Per-Second to Meters-Per-Second
@@ -55,6 +46,3 @@
 >>##### Kelvin to Celsius
 >>##### Dew Point
 >>##### Heat Index
->>##### Wind Chill (_under development_)
->>##### Apparent Temperature (_under development_)
-#### Volume
