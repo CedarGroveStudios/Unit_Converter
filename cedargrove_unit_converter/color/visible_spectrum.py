@@ -1,12 +1,30 @@
-# SPDX-FileCopyrightText: 2021 Cedar Grove Studios
+# SPDX-FileCopyrightText: Copyright (c) 2022 JG for Cedar Grove Maker Studios
+#
 # SPDX-License-Identifier: MIT
+"""
+`cedargrove_rgb_spectrumtools.visible`
+================================================================================
 
-# visible_spectrum.py
-# 2021-05-27 version 1.2
+A Spectral Index to Visible (Rainbow) Spectrum RGB Converter Helper
 
-# Spectral Index to Visible (Rainbow) Spectrum RGB Converter Helper
-# Based on original 1996 Fortran code by Dan Bruton:
-#   physics.sfasu.edu/astro/color/spectra.html
+Based on original 1996 Fortran code by Dan Bruton:
+physics.sfasu.edu/astro/color/spectra.html
+
+* Author(s): JG
+
+Implementation Notes
+--------------------
+
+**Hardware:**
+
+**Software and Dependencies:**
+
+* Adafruit CircuitPython firmware for the supported boards:
+  https://circuitpython.org/downloads
+"""
+
+__version__ = "0.0.0+auto.0"
+__repo__ = "https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools.git"
 
 
 def index_to_rgb(index=0, gamma=0.5):
@@ -15,6 +33,10 @@ def index_to_rgb(index=0, gamma=0.5):
     spectrum to an RGB value. Spectral index in range of 0.0 to 1.0
     (violet --> white). Gamma in range of 0.0 to 1.0 (1.0=linear),
     default 0.5 for color TFT displays.
+
+    :param float index: The normalized index value, range 0 to 1.0. Defaults to 0.
+    :param float gamma: The gamma color perception value. Defaults to 0.5.
+
     :return: Returns a 24-bit RGB value
     :rtype: integer
     """

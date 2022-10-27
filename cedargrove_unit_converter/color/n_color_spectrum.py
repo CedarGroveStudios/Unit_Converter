@@ -1,14 +1,38 @@
-# SPDX-FileCopyrightText: 2022 Cedar Grove Maker Studios
+# SPDX-FileCopyrightText: Copyright (c) 2022 JG for Cedar Grove Maker Studios
+#
 # SPDX-License-Identifier: MIT
+"""
+`cedargrove_rgb_spectrumtools.n_color_spectrum`
+================================================================================
 
-# n_color_spectrum.py  2022-04-19 v0.0419  Cedar Grove Maker Studios
+An n-Color Spectrum Index to RGB Converter Class
 
-# n-Color Spectrum Index to RGB Converter Class
+* Author(s): JG
+
+Implementation Notes
+--------------------
+
+**Hardware:**
+
+**Software and Dependencies:**
+
+* Adafruit CircuitPython firmware for the supported boards:
+  https://circuitpython.org/downloads
+"""
+
+__version__ = "0.0.0+auto.0"
+__repo__ = "https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools.git"
 
 
 def map_range(x, in_min, in_max, out_min, out_max):
     """Maps and constrains an input value from one range of values to another.
     (from adafruit_simpleio)
+
+    :param float x: The value to be mapped. No default.
+    :param float in_min: The beginning of the input range. No default.
+    :param float in_max: The end of the input range. No default.
+    :param float out_min: The beginning of the output range. No default.
+    :param float out_max: The end of the output range. No default.
 
     :return: Returns value mapped to new range
     :rtype: float
@@ -58,6 +82,7 @@ class Spectrum:
 
     :param list colors: A list of 24-bit color values. Up to 260 colors can be
                         included in the list, depending on available memory.
+                        Defaults to None.
     :param string mode: Specifies the type of spectrum, "light" or "continuous".
                         Defaults to "continuous".
     :param float gamma: A positive float value to adjust color intensity for
