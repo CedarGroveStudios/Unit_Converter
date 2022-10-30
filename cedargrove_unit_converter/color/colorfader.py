@@ -24,7 +24,7 @@ __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/CedarGroveStudios/Unit_Converter.git"
 
 
-def color_fader(self, source_color=None, brightness=1.0, gamma=1.0):
+def color_fader(source_color=None, brightness=1.0, gamma=1.0):
     """Scale a 24-bit RGB source color value in proportion to the brightness
     setting (0 to 1.0). Returns an adjusted 24-bit RGB color value or None if
     the source color is None (transparent). The adjusted color's gamma value is
